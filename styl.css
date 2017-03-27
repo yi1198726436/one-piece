@@ -1,0 +1,137 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body{
+	text-align: center;
+	width:800px;
+	background-image: url('IMG_8061.JPG');
+	height:1000px;
+	background-size: 500px;
+
+}
+.content{
+
+	width: 250px;
+	height: 250px;
+	margin: 50px auto;
+	perspective: 1000px;
+
+}
+
+.content .flex{
+	width: 250px;
+	height: 250px;
+	position: relative;
+	transform-style: preserve-3d;
+	transform: rotate3d(1,2,1,-15deg);
+	transition: all 1s ease;
+}
+.flex div{
+	width: 100%;
+	height: 100%;
+	position: absolute;;
+	top: 0;
+	left: 0;
+	opacity: 0.5;
+	box-shadow: 0 0 30px #ccc;
+
+}
+
+.flex div img{
+	width: 100%;
+	height: 100%;
+}
+
+.front{
+	position: relative;
+	transform: translate3d(0,0,125px);
+	animation: move 10s linear infinite;
+
+}
+
+.back{
+	
+	transform: rotateX(180deg) translate3d(0,0,125px);
+	
+}
+.left{
+	
+	transform: rotateY(90deg) translate3d(0,0,125px);
+	
+}
+
+.right{
+	
+	transform: rotateY(-90deg) translate3d(0,0,125px);
+	
+}
+.top{
+	
+	transform: rotateX(90deg) translate3d(0,0,125px);
+	
+}
+.bottom{
+
+	transform: rotateX(-90deg) translate3d(0,0,125px);
+
+}
+
+@keyframes move{
+	0%{transform: rotateX(0deg) rotateY(0deg);}
+	100%{transform: rotateX(360deg) rotateY(360deg);}
+}
+
+
+input{
+	display: none;
+}
+
+
+#front:checked~.content .flex{
+	transform: rotate3d(0,0,0,0deg);
+}
+#back:checked~.content .flex{
+	transform: rotateZ(180deg);
+}
+#left:checked~.content .flex{
+	transform: rotateY(90deg);
+}
+#right:checked~.content .flex{
+	transform: rotateY(-90deg);
+}
+#top:checked~.content .flex{
+	transform: rotateX(90deg);
+}
+#bottom:checked~.content .flex{
+	transform: rotateX(-90deg);
+}
+.anniu{
+	width: 600px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+}
+.anniu label{
+	background-image: url('IMG_8061.JPG');
+	display: block;
+	width: 80px;
+	height: 50px;
+	text-align: center;
+	line-height: 50px;
+	border-radius: 5px;
+}
+#front:checked~.anniu label:nth-child(1),
+#back:checked~.anniu label:nth-child(2),
+#left:checked~.anniu label:nth-child(3),
+#right:checked~.anniu label:nth-child(4),
+#top:checked~.anniu label:nth-child(5),
+#bottom:checked~.anniu label:nth-child(6){
+	background: deepskyblue;
+	color: #fff;
+	font-weight: 700;
+}
+
+
