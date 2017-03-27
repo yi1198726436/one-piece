@@ -7,7 +7,7 @@
 body{
 	text-align: center;
 	width:800px;
-	background-image: url('IMG_8061.JPG');
+	background-color:black;
 	height:1000px;
 	background-size: 500px;
 
@@ -28,6 +28,7 @@ body{
 	transform-style: preserve-3d;
 	transform: rotate3d(1,2,1,-15deg);
 	transition: all 1s ease;
+	animation: move 10s linear infinite;
 }
 .flex div{
 	width: 100%;
@@ -48,7 +49,7 @@ body{
 .front{
 	position: relative;
 	transform: translate3d(0,0,125px);
-	animation: move 10s linear infinite;
+	
 
 }
 
